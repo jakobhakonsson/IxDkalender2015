@@ -5,25 +5,23 @@ boolean grid(int x, int y, int _width, int _height) {
     return false;
   }
 }
-void fix() {
-  if ( mousePressed == true) {
-    if (grid(100, 920, _width, _height)) {
-      test = true;
+boolean fix(int x, int y, int _width, int _height) {
+    if (grid(x, y, _width, _height)) {
+      return true;
+    }else{
+      return false;
     }
-  }
 }
-void mouse() {
-  if (test == true) {
-    if (i>100) {
-      bigger = -1;
-      star(100, 920, _width, _height);
-    } else {
-      star(100, 920, _width, _height);
-    }
+void mouse(int x, int y, int _width, int _height) {
+  if (is>100) {
+    bigger = -1;
+    star(x, y, _width, _height);
+  } else {
+    star(x, y, _width, _height);
   }
 }
 void star(int x, int y, int _width, int _height) {
-  fill(255, 255, 0, 0+3*i);
-  ellipse(x+_width/2, y+_height/2, 10+i, 10+i);
-  i = i + bigger;
+  fill(255, 255, 0, 0+3*is);
+  ellipse(x+_width/2, y+_height/2, 10+is, 10+is);
+  is = is + bigger;
 }
